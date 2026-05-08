@@ -91,3 +91,11 @@ When the process is completed successfully, the person becomes a Customer.
 
 ### Playground Setup
 ![Playground Setup](playground-setup.png)
+
+### Platform basics
+![Platform basics](platform-basics-completed.png.png)
+
+### Data Model Basics
+![Data Model Basics](data-model-basics-completed.png)
+
+
