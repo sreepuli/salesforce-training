@@ -84,10 +84,7 @@ When the process is completed successfully, the person becomes a Customer.
 ![Trailhead Module Completion](trailhead-module.png)
 
 ### Salesforce Playground
-![Salesforce Playground](salesforce-playground.png)
-
-### App Launcher
-![App Launcher](app-launcher.png)
+![Salesforce Playground](playground.png)
 
 ### CRM Module Completion
 ![CRM Module Completion](crm-module.png)
