@@ -51,7 +51,7 @@ Students can register and submit admission applications through the system. Admi
 ## Screenshots
 
 ### Agentforce 360 Platform Basics
-![Agentforce 360 Platform Basics](agentforce-360-platform-basics.png)
+![Agentforce 360 Platform Basics](agentforce-360-platform-basics.png.png)
 
 ### Agentforce 360 Platform Development Basics
-![Agentforce 360 Platform Development Basics](agentforce-360-platform-development-basics.png)
+![Agentforce 360 Platform Development Basics](agentforce-360-platform-development-basics.png.png)
