@@ -74,9 +74,7 @@ Automatically send reminders before the fee payment deadline.
 # 📊 Flow Diagram – Fee Reminder Automation
 
 
-```markdown
 ![Flow Diagram](flow-diagram.png)
-```
 
 ---
 
