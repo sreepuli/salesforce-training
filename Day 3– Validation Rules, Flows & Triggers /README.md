@@ -47,7 +47,7 @@ When a record is created
 ```
 
 <p align="center">
-  <img src="Flow.png" width="900">
+  <img src="ScreenShots/Flow.png" width="900">
 </p>
 ```
 
@@ -80,7 +80,7 @@ NOT(ISNUMBER(Phone__c))
 )
 ```
 <p align="center">
-  <img src="Screenshots/ValidationRule1.png" width="900">
+  <img src="ScreenShots/ValidationRule1.png" width="900">
 </p>
 ---
 
@@ -90,15 +90,17 @@ NOT(ISNUMBER(Phone__c))
 
 **Purpose**
 
-Appointment date cannot be in the past.
+Assign a doctor before completing the appointment.
 
 **Formula**
 
 ```text
-Appointment_Date__c < TODAY()
+AND( ISPICKVAL(Status__c,'Scheduled'),
+ISBLANK(Doctor__c)
+)
 ```
 <p align="center">
-  <img src="ValidationRule2.png" width="900">
+  <img src="ScreenShots/ValidationRule2.png" width="900">
 </p>
 ---
 
@@ -116,7 +118,7 @@ Consultation fee cannot be negative.
 Consultation_Fee__c < 0
 ```
 <p align="center">
-  <img src="ValidationRule3.png" width="900">
+  <img src="ScreenShots/ValidationRule3.png" width="900">
 </p>
 ---
 
