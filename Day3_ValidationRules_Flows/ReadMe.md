@@ -47,7 +47,7 @@ When a record is created
 ```
 
 <p align="center">
-  <img src="ScreenShots/Flow.png" width="900">
+  <img src="ScreenShot/Flow.png" width="900">
 </p>
 ```
 
@@ -80,7 +80,7 @@ NOT(ISNUMBER(Phone__c))
 )
 ```
 <p align="center">
-  <img src="ScreenShots/ValidationRule1.png" width="900">
+  <img src="ScreenShot/ValidationRule1.png" width="900">
 </p>
 ---
 
@@ -100,7 +100,7 @@ ISBLANK(Doctor__c)
 )
 ```
 <p align="center">
-  <img src="ScreenShots/ValidationRule2.png" width="900">
+  <img src="ScreenShot/ValidationRule2.png" width="900">
 </p>
 ---
 
@@ -118,7 +118,7 @@ Consultation fee cannot be negative.
 Consultation_Fee__c < 0
 ```
 <p align="center">
-  <img src="ScreenShots/ValidationRule3.png" width="900">
+  <img src="ScreenShot/ValidationRule3.png" width="900">
 </p>
 ---
 
