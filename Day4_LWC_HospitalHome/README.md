@@ -57,14 +57,6 @@ The Hospital Dashboard displaying all management modules.
 
 ---
 
-## 9️⃣ Final Output
-
-Final user interface displayed within Salesforce.
-
-![Final Output](Final_Output.png)
-
----
-
 # ❓ README Questions
 
 ## 1. What is LWC?
