@@ -1,0 +1,131 @@
+<template>
+
+    <lightning-card>
+
+        <div class="header">
+
+            <h1>🏥 Hospital OPD Management System</h1>
+
+            <p>Welcome to Vishnu Hospital</p>
+
+            <p>Today's Date : {todayDate}</p>
+
+        </div>
+
+    </lightning-card>
+
+    <br/>
+
+    <lightning-layout multiple-rows>
+
+        <lightning-layout-item size="3" padding="around-small">
+
+            <lightning-card title="Patients">
+
+                <div class="cardValue">
+                    {patients}
+                </div>
+
+            </lightning-card>
+
+        </lightning-layout-item>
+
+        <lightning-layout-item size="3" padding="around-small">
+
+            <lightning-card title="Doctors">
+
+                <div class="cardValue">
+                    {doctors}
+                </div>
+
+            </lightning-card>
+
+        </lightning-layout-item>
+
+        <lightning-layout-item size="3" padding="around-small">
+
+            <lightning-card title="Appointments">
+
+                <div class="cardValue">
+                    {appointments}
+                </div>
+
+            </lightning-card>
+
+        </lightning-layout-item>
+
+        <lightning-layout-item size="3" padding="around-small">
+
+            <lightning-card title="Departments">
+
+                <div class="cardValue">
+                    {departments}
+                </div>
+
+            </lightning-card>
+
+        </lightning-layout-item>
+
+    </lightning-layout>
+
+    <br/>
+
+    <lightning-card title="Doctor Information">
+
+        <div class="slds-p-around_medium">
+
+            <p><strong>Doctor Name :</strong> {doctorName}</p>
+
+            <p><strong>Department :</strong> {departmentName}</p>
+
+            <p><strong>Hospital :</strong> {hospitalName}</p>
+
+        </div>
+
+    </lightning-card>
+
+    <br/>
+
+    <lightning-card title="Appointment Status">
+
+        <div class="slds-p-around_medium">
+
+            <p class="status">
+                Status : {appointmentStatus}
+            </p>
+
+            <br/>
+
+            <lightning-button
+                variant="brand"
+                label="Book Appointment"
+                onclick={bookAppointment}>
+            </lightning-button>
+
+        </div>
+
+    </lightning-card>
+
+    <br/>
+
+    <lightning-card title="Welcome">
+
+        <div class="slds-p-around_medium">
+
+            <lightning-button
+                variant="success"
+                label="Show Welcome Message"
+                onclick={showWelcome}>
+            </lightning-button>
+
+            <br/><br/>
+
+            <p class="message">
+                {welcomeMessage}
+            </p>
+
+        </div>
+
+    </lightning-card>
+
+</template>
