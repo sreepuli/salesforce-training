@@ -1,0 +1,67 @@
+<template>
+    <lightning-card title="Book Appointment" icon-name="standard:appointment">
+
+        <div class="container">
+
+            <lightning-record-picker
+                label="Patient"
+                object-api-name="Patient__c"
+                value={patientId}
+                onchange={handlePatientChange}>
+            </lightning-record-picker>
+
+            <lightning-record-picker
+                label="Doctor"
+                object-api-name="Doctor__c"
+                value={doctorId}
+                onchange={handleDoctorChange}>
+            </lightning-record-picker>
+
+            <lightning-input
+                type="date"
+                label="Appointment Date"
+                value={appointmentDate}
+                onchange={handleDateChange}>
+            </lightning-input>
+
+            <lightning-input
+                type="time"
+                label="Appointment Time"
+                value={appointmentTime}
+                onchange={handleTimeChange}>
+            </lightning-input>
+
+            <lightning-textarea
+                label="Symptoms"
+                value={symptoms}
+                onchange={handleSymptomsChange}>
+            </lightning-textarea>
+
+            <lightning-combobox
+                label="Visit Type"
+                value={visitType}
+                options={visitTypeOptions}
+                onchange={handleVisitTypeChange}>
+            </lightning-combobox>
+
+            <lightning-combobox
+                label="Priority"
+                value={priority}
+                options={priorityOptions}
+                onchange={handlePriorityChange}>
+            </lightning-combobox>
+
+            <div class="button-container">
+
+                <lightning-button
+                    variant="brand"
+                    label="Book Appointment"
+                    onclick={bookAppointment}>
+                </lightning-button>
+
+            </div>
+
+        </div>
+
+    </lightning-card>
+</template>
