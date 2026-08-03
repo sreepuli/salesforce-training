@@ -1,0 +1,179 @@
+<template>
+
+    <lightning-card
+        title="Appointment History"
+        icon-name="standard:appointment">
+
+        <div class="slds-p-around_medium">
+
+            <!-- Patient Selection -->
+            <lightning-record-picker
+                label="Select Patient"
+                object-api-name="Patient__c"
+                onchange={handlePatientChange}>
+            </lightning-record-picker>
+
+            <br/>
+
+            <lightning-button
+                label="Search"
+                variant="brand"
+                onclick={loadHistory}>
+            </lightning-button>
+
+            <br/><br/>
+
+            <template if:true={appointments.length}>
+
+                <template
+                    for:each={appointments}
+                    for:item="app">
+
+                    <lightning-card
+                        key={app.Id}
+                        class="slds-m-bottom_medium">
+
+                        <div class="slds-p-around_medium">
+
+                            <div class="slds-grid slds-wrap">
+
+                                <div class="slds-col slds-size_1-of-2">
+                                    <p><b>Doctor :</b> {app.doctorName}</p>
+                                </div>
+
+                                <div class="slds-col slds-size_1-of-2">
+                                    <p><b>Token :</b> {app.Token_Number__c}</p>
+                                </div>
+
+                               <div class="slds-col slds-size_1-of-2 slds-m-top_small">
+                                        <p>
+                                            <b>Appointment Date :</b>
+                                            <lightning-formatted-date-time
+                                                value={app.AppointmentDate__c}
+                                                year="numeric"
+                                                month="short"
+                                                day="2-digit"
+                                                hour="2-digit"
+                                                minute="2-digit"
+                                                hour12="true">
+                                            </lightning-formatted-date-time>
+                                        </p>
+                                    </div>
+
+                                <div class="slds-col slds-size_1-of-2 slds-m-top_small">
+                                    <p><b>Visit Type :</b> {app.Visit_Type__c}</p>
+                                </div>
+
+                                <div class="slds-col slds-size_1-of-2 slds-m-top_small">
+                                    <p><b>Priority :</b> {app.Priority__c}</p>
+                                </div>
+
+                                <div class="slds-col slds-size_1-of-2 slds-m-top_small">
+    <p><b>Status :</b> {app.Status__c}</p>
+</div>
+
+<!-- Show only for completed appointments -->
+<template lwc:if={app.showCompletedTime}>
+
+    <div class="slds-col slds-size_1-of-2 slds-m-top_small">
+
+        <p>
+            <b>Completed At :</b>
+
+            <lightning-formatted-date-time
+                value={app.Check_Out_Time__c}
+                year="numeric"
+                month="short"
+                day="2-digit"
+                hour="2-digit"
+                minute="2-digit"
+                hour12="true">
+            </lightning-formatted-date-time>
+
+        </p>
+
+    </div>
+
+</template>
+
+                            </div>
+
+                            <!-- Show buttons only for Scheduled appointments -->
+                            <template lwc:if={app.showActions}>
+
+                                <div class="slds-m-top_medium">
+
+                                    <lightning-button
+                                        label="Cancel"
+                                        variant="destructive"
+                                        data-id={app.Id}
+                                        onclick={handleCancel}>
+                                    </lightning-button>
+
+                                    <lightning-button
+                                        label="Reschedule"
+                                        variant="brand"
+                                        class="slds-m-left_small"
+                                        data-id={app.Id}
+                                        onclick={handleReschedule}>
+                                    </lightning-button>
+                                    <lightning-button
+                                            label="Complete"
+                                            variant="success"
+                                            class="slds-m-left_small"
+                                            data-id={app.Id}
+                                            onclick={handleComplete}>
+                                        </lightning-button>
+
+                                </div>
+
+                                <!-- Show Date Picker after clicking Reschedule -->
+                                <template lwc:if={app.showReschedule}>
+
+                                    <div class="slds-m-top_medium">
+
+                                        <lightning-input
+                                            type="datetime"
+                                            label="New Appointment Date & Time"
+                                            value={newAppointmentDate}
+                                            onchange={handleDateChange}>
+                                        </lightning-input>
+
+                                        <br/>
+
+                                        <lightning-button
+                                            label="Save"
+                                            variant="success"
+                                            data-id={app.Id}
+                                            onclick={saveReschedule}>
+                                        </lightning-button>
+
+                                    </div>
+
+                                </template>
+
+                            </template>
+
+                        </div>
+
+                    </lightning-card>
+
+                </template>
+
+            </template>
+
+            <template if:false={appointments.length}>
+
+                <div class="slds-align_absolute-center slds-p-around_large">
+
+                    No Appointments Found.
+
+                </div>
+
+            </template>
+
+        </div>
+
+    </lightning-card>
+
+</template>
